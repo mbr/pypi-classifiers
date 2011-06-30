@@ -3,8 +3,9 @@
 
 import gtk
 import os
-
 import urllib2
+
+import pkg_resources
 
 def reset_model():
     model = builder.get_object('classifiers_store')
@@ -38,7 +39,8 @@ def on_cell_toggle(renderer, path):
     builder.get_object('output').get_buffer().set_text('\n'.join(chunks))
 
 builder = gtk.Builder()
-builder.add_from_file(os.path.join(os.path.dirname(__file__), 'ui.xml'))
+ui = pkg_resources.resource_string('pypiclassifiers', 'ui.xml')
+builder.add_from_string(ui)
 
 # load data
 reset_model()

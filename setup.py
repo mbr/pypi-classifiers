@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding=utf8
 
+import os
 from setuptools import setup, find_packages
 import sys
 
@@ -11,16 +12,17 @@ def read(fname):
 
 setup(name='pypi-classifiers',
       version='0.1',
-      description='Use a GUI to select PyPI-classifiers and include them in a
-      setup.py',
+      description='Use a GUI to select PyPI-classifiers and include them in a'\
+        'setup.py',
       long_description=read('README.rst'),
       keywords='pypi setup.py classifiers programming',
       author='Marc Brinkmann',
       author_email='git@marcbrinkmann.de',
       url='http://github.com/mbr/pypi-classifiers',
       license='MIT',
-      packages=find_packages(exclude=['tests']),
-      tests_require=tests_require,
+      include_package_data=True,
+      package_data={'': ['ui.xml']},
+      packages=['pypiclassifiers'],
       scripts=[
         'pypi-classifiers',
       ],
@@ -36,5 +38,5 @@ setup(name='pypi-classifiers',
           'Programming Language :: Python',
           'Topic :: Software Development',
           'Topic :: Utilities',
-     ]
+     ],
      )
