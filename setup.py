@@ -25,6 +25,7 @@ setup(name='pypi-classifiers',
       scripts=[
         'pypi-classifiers',
       ],
+      install_requires=['requests'],
       classifiers=[
           'Development Status :: 4 - Beta',
           'Environment :: Win32 (MS Windows)',
