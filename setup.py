@@ -20,7 +20,6 @@ setup(name='pypi-classifiers',
       url='http://github.com/mbr/pypi-classifiers',
       license='MIT',
       package_data={'pypiclassifiers': ['ui.xml']},
-      packages=['pypiclassifiers'],
       scripts=[
           'pypi-classifiers',
       ],
