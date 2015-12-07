@@ -2,8 +2,7 @@
 # coding=utf8
 
 import os
-from setuptools import setup, find_packages
-import sys
+from setuptools import setup
 
 
 def read(fname):
@@ -36,6 +35,8 @@ setup(name='pypi-classifiers',
           'Operating System :: Microsoft :: Windows',
           'Operating System :: POSIX',
           'Programming Language :: Python',
+          'Programming Language :: Python :: 2',
+          'Programming Language :: Python :: 3',
           'Topic :: Software Development',
           'Topic :: Utilities',
       ], )
