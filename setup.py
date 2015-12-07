@@ -11,9 +11,9 @@ def read(fname):
 
 
 setup(name='pypi-classifiers',
-      version='0.1',
-      description='Use a GUI to select PyPI-classifiers and include them in a'\
-        'setup.py',
+      version='0.2.dev1',
+      description=('Use a GUI to select PyPI-classifiers and include them in a'
+                   'setup.py'),
       long_description=read('README.rst'),
       keywords='pypi setup.py classifiers programming',
       author='Marc Brinkmann',
@@ -23,7 +23,7 @@ setup(name='pypi-classifiers',
       package_data={'pypiclassifiers': ['ui.xml']},
       packages=['pypiclassifiers'],
       scripts=[
-        'pypi-classifiers',
+          'pypi-classifiers',
       ],
       install_requires=['requests'],
       classifiers=[
@@ -38,5 +38,4 @@ setup(name='pypi-classifiers',
           'Programming Language :: Python',
           'Topic :: Software Development',
           'Topic :: Utilities',
-     ],
-     )
+      ], )
