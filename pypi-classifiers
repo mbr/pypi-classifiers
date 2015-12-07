@@ -2,10 +2,10 @@
 # coding=utf8
 
 import gtk
-import os
 import urllib2
 
 import pkg_resources
+
 
 def reset_model():
     model = builder.get_object('classifiers_store')
@@ -30,13 +30,14 @@ def on_cell_toggle(renderer, path):
     # update tree view
     chunks = ['classifiers=[']
     i = model.get_iter_first()
-    while None != i:
-        if True == model.get_value(i, 0):
+    while i is not None:
+        if model.get_value(i, 0) is True:
             chunks.append("    '%s'," % model.get_value(i, 1))
         i = model.iter_next(i)
     chunks.append(']')
 
     builder.get_object('output').get_buffer().set_text('\n'.join(chunks))
+
 
 builder = gtk.Builder()
 ui = pkg_resources.resource_string('pypiclassifiers', 'ui.xml')
@@ -49,8 +50,6 @@ reset_model()
 mw = builder.get_object('main_window')
 mw.connect('delete-event', lambda a, b: gtk.main_quit())
 builder.get_object('renderer_active').connect('toggled', on_cell_toggle)
-
-
 
 if '__main__' == __name__:
     import glib
