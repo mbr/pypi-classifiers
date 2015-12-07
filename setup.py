@@ -10,7 +10,7 @@ def read(fname):
 
 
 setup(name='pypi-classifiers',
-      version='0.2.dev1',
+      version='0.2',
       description=('Use a GUI to select PyPI-classifiers and include them in a'
                    'setup.py'),
       long_description=read('README.rst'),
