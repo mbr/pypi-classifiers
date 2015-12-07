@@ -19,7 +19,6 @@ setup(name='pypi-classifiers',
       author_email='git@marcbrinkmann.de',
       url='http://github.com/mbr/pypi-classifiers',
       license='MIT',
-      package_data={'pypiclassifiers': ['ui.xml']},
       scripts=[
           'pypi-classifiers',
       ],
